@@ -1,0 +1,402 @@
+SQL> select ROUND(MAX(salary)) MAXIMUM, ROUND(MIN(SALARY)) MINIMUM, ROUND(SUM(SALARY)) SUM, ROUND(AVG(SALARY)) AVERAGE
+  2  FROM EMPLOYEES;
+
+   MAXIMUM    MINIMUM        SUM    AVERAGE                                     
+---------- ---------- ---------- ----------                                     
+     24000       2100     691416       6462                                     
+
+SQL> SAVE E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\Prac5_1.sql;
+Created file E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\Prac5_1.sql
+SQL> @ E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\Prac5_1.sql;
+
+   MAXIMUM    MINIMUM        SUM    AVERAGE                                     
+---------- ---------- ---------- ----------                                     
+     24000       2100     691416       6462                                     
+
+SQL> select job_id, ROUND(MAX(salary)) MAXIMUM, ROUND(MIN(SALARY)) MINIMUM, ROUND(SUM(SALARY)) SUM, ROUND(AVG(SALARY)) AVERAGE
+  2  from employees
+  3  group by job_id;
+
+JOB_ID        MAXIMUM    MINIMUM        SUM    AVERAGE                          
+---------- ---------- ---------- ---------- ----------                          
+IT_PROG          9000       4200      28800       5760                          
+AC_MGR          12008      12008      12008      12008                          
+AC_ACCOUNT       8300       8300       8300       8300                          
+ST_MAN           8200       5800      36400       7280                          
+PU_MAN          11000      11000      11000      11000                          
+AD_ASST          4400       4400       4400       4400                          
+AD_VP           17000      17000      34000      17000                          
+SH_CLERK         4200       2500      64300       3215                          
+FI_ACCOUNT       9000       6900      39600       7920                          
+FI_MGR          12008      12008      12008      12008                          
+PU_CLERK         3100       2500      13900       2780                          
+
+JOB_ID        MAXIMUM    MINIMUM        SUM    AVERAGE                          
+---------- ---------- ---------- ---------- ----------                          
+SA_MAN          14000      10500      61000      12200                          
+MK_MAN          13000      13000      13000      13000                          
+PR_REP          10000      10000      10000      10000                          
+AD_PRES         24000      24000      24000      24000                          
+SA_REP          11500       6100     250500       8350                          
+MK_REP           6000       6000       6000       6000                          
+ST_CLERK         3600       2100      55700       2785                          
+HR_REP           6500       6500       6500       6500                          
+
+19 rows selected.
+
+SQL> save E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\prac5_2.sql;
+Created file E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\prac5_2.sql
+SQL> @ E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\prac5_2.sql;
+
+JOB_ID        MAXIMUM    MINIMUM        SUM    AVERAGE                          
+---------- ---------- ---------- ---------- ----------                          
+IT_PROG          9000       4200      28800       5760                          
+AC_MGR          12008      12008      12008      12008                          
+AC_ACCOUNT       8300       8300       8300       8300                          
+ST_MAN           8200       5800      36400       7280                          
+PU_MAN          11000      11000      11000      11000                          
+AD_ASST          4400       4400       4400       4400                          
+AD_VP           17000      17000      34000      17000                          
+SH_CLERK         4200       2500      64300       3215                          
+FI_ACCOUNT       9000       6900      39600       7920                          
+FI_MGR          12008      12008      12008      12008                          
+PU_CLERK         3100       2500      13900       2780                          
+
+JOB_ID        MAXIMUM    MINIMUM        SUM    AVERAGE                          
+---------- ---------- ---------- ---------- ----------                          
+SA_MAN          14000      10500      61000      12200                          
+MK_MAN          13000      13000      13000      13000                          
+PR_REP          10000      10000      10000      10000                          
+AD_PRES         24000      24000      24000      24000                          
+SA_REP          11500       6100     250500       8350                          
+MK_REP           6000       6000       6000       6000                          
+ST_CLERK         3600       2100      55700       2785                          
+HR_REP           6500       6500       6500       6500                          
+
+19 rows selected.
+
+SQL> select job_id, count(*)
+  2  from employees
+  3  group by job_id;
+
+JOB_ID       COUNT(*)                                                           
+---------- ----------                                                           
+AC_ACCOUNT          1                                                           
+AC_MGR              1                                                           
+AD_ASST             1                                                           
+AD_PRES             1                                                           
+AD_VP               2                                                           
+FI_ACCOUNT          5                                                           
+FI_MGR              1                                                           
+HR_REP              1                                                           
+IT_PROG             5                                                           
+MK_MAN              1                                                           
+MK_REP              1                                                           
+
+JOB_ID       COUNT(*)                                                           
+---------- ----------                                                           
+PR_REP              1                                                           
+PU_CLERK            5                                                           
+PU_MAN              1                                                           
+SA_MAN              5                                                           
+SA_REP             30                                                           
+SH_CLERK           20                                                           
+ST_CLERK           20                                                           
+ST_MAN              5                                                           
+
+19 rows selected.
+
+SQL> select count(Manager_id) number of Managers from employees;
+select count(Manager_id) number of Managers from employees
+                         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> select count(Manager_id) "Number of Managers" from employees;
+
+Number of Managers                                                              
+------------------                                                              
+               106                                                              
+
+SQL> select max(salary) - min(salary) as difference from employees;
+
+DIFFERENCE                                                                      
+----------                                                                      
+     21900                                                                      
+
+SQL> select manager_id, salary from employees
+  2  where manager_id IS NOT NULL
+  3  ;
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       100      17000                                                           
+       100      17000                                                           
+       102       9000                                                           
+       103       6000                                                           
+       103       4800                                                           
+       103       4800                                                           
+       103       4200                                                           
+       101      12008                                                           
+       108       9000                                                           
+       108       8200                                                           
+       108       7700                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       108       7800                                                           
+       108       6900                                                           
+       100      11000                                                           
+       114       3100                                                           
+       114       2900                                                           
+       114       2800                                                           
+       114       2600                                                           
+       114       2500                                                           
+       100       8000                                                           
+       100       8200                                                           
+       100       7900                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       100       6500                                                           
+       100       5800                                                           
+       120       3200                                                           
+       120       2700                                                           
+       120       2400                                                           
+       120       2200                                                           
+       121       3300                                                           
+       121       2800                                                           
+       121       2500                                                           
+       121       2100                                                           
+       122       3300                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       122       2900                                                           
+       122       2400                                                           
+       122       2200                                                           
+       123       3600                                                           
+       123       3200                                                           
+       123       2700                                                           
+       123       2500                                                           
+       124       3500                                                           
+       124       3100                                                           
+       124       2600                                                           
+       124       2500                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       100      14000                                                           
+       100      13500                                                           
+       100      12000                                                           
+       100      11000                                                           
+       100      10500                                                           
+       145      10000                                                           
+       145       9500                                                           
+       145       9000                                                           
+       145       8000                                                           
+       145       7500                                                           
+       145       7000                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       146      10000                                                           
+       146       9500                                                           
+       146       9000                                                           
+       146       8000                                                           
+       146       7500                                                           
+       146       7000                                                           
+       147      10500                                                           
+       147       9500                                                           
+       147       7200                                                           
+       147       6800                                                           
+       147       6400                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       147       6200                                                           
+       148      11500                                                           
+       148      10000                                                           
+       148       9600                                                           
+       148       7400                                                           
+       148       7300                                                           
+       148       6100                                                           
+       149      11000                                                           
+       149       8800                                                           
+       149       8600                                                           
+       149       8400                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       149       7000                                                           
+       149       6200                                                           
+       120       3200                                                           
+       120       3100                                                           
+       120       2500                                                           
+       120       2800                                                           
+       121       4200                                                           
+       121       4100                                                           
+       121       3400                                                           
+       121       3000                                                           
+       122       3800                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       122       3600                                                           
+       122       2900                                                           
+       122       2500                                                           
+       123       4000                                                           
+       123       3900                                                           
+       123       3200                                                           
+       123       2800                                                           
+       124       3100                                                           
+       124       3000                                                           
+       124       2600                                                           
+       124       2600                                                           
+
+MANAGER_ID     SALARY                                                           
+---------- ----------                                                           
+       101       4400                                                           
+       100      13000                                                           
+       201       6000                                                           
+       101       6500                                                           
+       101      10000                                                           
+       101      12008                                                           
+       205       8300                                                           
+
+106 rows selected.
+
+SQL> select manager_id, min(salary) from employees
+  2  where manager_id is not null
+  3  group by manager_id
+  4  having min(salary) > 6000
+  5  order by 2;
+
+MANAGER_ID MIN(SALARY)                                                          
+---------- -----------                                                          
+       148        6100                                                          
+       147        6200                                                          
+       149        6200                                                          
+       108        6900                                                          
+       146        7000                                                          
+       145        7000                                                          
+       205        8300                                                          
+       102        9000                                                          
+
+8 rows selected.
+
+SQL> select count(*), sum(decode(to_char(hire_date, 'yyyy'), 2007, 1, 0)) "2007",
+  2  sum(decode(to_char(hire_date, 'yyyy'), 2008, 1, 0)) "2008",
+  3  sum(decode(to_char(hire_date, 'yyyy'), 2009, 1, 0)) "2009",
+  4  sum(decode(to_char(hire_date, 'yyyy'), 2010, 1, 0)) "2010"
+  5  from employees;
+
+  COUNT(*)       2007       2008       2009       2010                          
+---------- ---------- ---------- ---------- ----------                          
+       107         19         11          0          0                          
+
+SQL> select count(*) "Total", sum(decode(to_char(hire_date, 'yyyy'), 2007, 1, 0)) "2007",
+  2  sum(decode(to_char(hire_date, 'yyyy'), 2008, 1, 0)) "2008",
+  3  sum(decode(to_char(hire_date, 'yyyy'), 2009, 1, 0)) "2009",
+  4  sum(decode(to_char(hire_date, 'yyyy'), 2010, 1, 0)) "2010"
+  5  from employees;
+
+     Total       2007       2008       2009       2010                          
+---------- ---------- ---------- ---------- ----------                          
+       107         19         11          0          0                          
+
+SQL> select job_id, CASE WHEN department_id = 20 then sum(salary)
+  2  			WHEN department_id = 50 then sum(salary)
+  3  			WHEN department_id = 80 then sum(salary)
+  4  			WHEN department_id = 90 then sum(salary)
+  5  from employees
+  6  group by job_id;
+from employees
+*
+ERROR at line 5:
+ORA-00905: missing keyword 
+
+
+SQL> select job_id, CASE WHEN department_id = 20 then sum(salary)
+  2  			WHEN department_id = 50 then sum(salary)
+  3  			WHEN department_id = 80 then sum(salary)
+  4  			WHEN department_id = 90 then sum(salary)
+  5  		    END
+  6  from employees
+  7  group by job_id;
+select job_id, CASE WHEN department_id = 20 then sum(salary)
+                         *
+ERROR at line 1:
+ORA-00979: not a GROUP BY expression 
+
+
+SQL> select job_id, sum(decode(department_id, 20, salary)) "20",
+  2  			sum(decode(department_id, 50, salary)) "50",
+  3  			sum(decode(department_id, 80, salary)) "80",
+  4  			sum(decode(department_id, 90, salary)) "90"
+  5  from employees
+  6  group by job_id;
+
+JOB_ID             20         50         80         90                          
+---------- ---------- ---------- ---------- ----------                          
+IT_PROG                                                                         
+AC_MGR                                                                          
+AC_ACCOUNT                                                                      
+ST_MAN                     36400                                                
+PU_MAN                                                                          
+AD_ASST                                                                         
+AD_VP                                            34000                          
+SH_CLERK                   64300                                                
+FI_ACCOUNT                                                                      
+FI_MGR                                                                          
+PU_CLERK                                                                        
+
+JOB_ID             20         50         80         90                          
+---------- ---------- ---------- ---------- ----------                          
+SA_MAN                                61000                                     
+MK_MAN          13000                                                           
+PR_REP                                                                          
+AD_PRES                                          24000                          
+SA_REP                               243500                                     
+MK_REP           6000                                                           
+ST_CLERK                   55700                                                
+HR_REP                                                                          
+
+19 rows selected.
+
+SQL> select job_id, nvl(sum(decode(department_id, 20, salary)), 0)  "20",
+  2  		 nvl(sum(decode(department_id, 50, salary)), 0) "50",
+  3  		 nvl(sum(decode(department_id, 80, salary)), 0) "80",
+  4  		 nvl(sum(decode(department_id, 90, salary)), 0) "90"
+  5  from employees
+  6  group by job_id;
+
+JOB_ID             20         50         80         90                          
+---------- ---------- ---------- ---------- ----------                          
+IT_PROG             0          0          0          0                          
+AC_MGR              0          0          0          0                          
+AC_ACCOUNT          0          0          0          0                          
+ST_MAN              0      36400          0          0                          
+PU_MAN              0          0          0          0                          
+AD_ASST             0          0          0          0                          
+AD_VP               0          0          0      34000                          
+SH_CLERK            0      64300          0          0                          
+FI_ACCOUNT          0          0          0          0                          
+FI_MGR              0          0          0          0                          
+PU_CLERK            0          0          0          0                          
+
+JOB_ID             20         50         80         90                          
+---------- ---------- ---------- ---------- ----------                          
+SA_MAN              0          0      61000          0                          
+MK_MAN          13000          0          0          0                          
+PR_REP              0          0          0          0                          
+AD_PRES             0          0          0      24000                          
+SA_REP              0          0     243500          0                          
+MK_REP           6000          0          0          0                          
+ST_CLERK            0      55700          0          0                          
+HR_REP              0          0          0          0                          
+
+19 rows selected.
+
+SQL> spool off

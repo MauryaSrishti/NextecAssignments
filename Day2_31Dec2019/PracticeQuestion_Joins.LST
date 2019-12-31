@@ -1,0 +1,2071 @@
+SQL> desc locations;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ LOCATION_ID                               NOT NULL NUMBER(4)
+ STREET_ADDRESS                                     VARCHAR2(40)
+ POSTAL_CODE                                        VARCHAR2(12)
+ CITY                                      NOT NULL VARCHAR2(30)
+ STATE_PROVINCE                                     VARCHAR2(25)
+ COUNTRY_ID                                         CHAR(2)
+
+SQL> desc countries;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COUNTRY_ID                                NOT NULL CHAR(2)
+ COUNTRY_NAME                                       VARCHAR2(40)
+ REGION_ID                                          NUMBER
+
+SQL> select l.location_id, l.street_address, l.city, l.state_province, c.country_name
+  2  from locations l
+  3  natural join countries c;
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+       1000 1297 Via Cola di Rie                                                
+Roma                                                                            
+Italy                                                                           
+                                                                                
+       1100 93091 Calle della Testa                                             
+Venice                                                                          
+Italy                                                                           
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+                                                                                
+       1200 2017 Shinjuku-ku                                                    
+Tokyo                          Tokyo Prefecture                                 
+Japan                                                                           
+                                                                                
+       1300 9450 Kamiya-cho                                                     
+Hiroshima                                                                       
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+Japan                                                                           
+                                                                                
+       1400 2014 Jabberwocky Rd                                                 
+Southlake                      Texas                                            
+United States of America                                                        
+                                                                                
+       1500 2011 Interiors Blvd                                                 
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+South San Francisco            California                                       
+United States of America                                                        
+                                                                                
+       1600 2007 Zagora St                                                      
+South Brunswick                New Jersey                                       
+United States of America                                                        
+                                                                                
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+       1700 2004 Charade Rd                                                     
+Seattle                        Washington                                       
+United States of America                                                        
+                                                                                
+       1800 147 Spadina Ave                                                     
+Toronto                        Ontario                                          
+Canada                                                                          
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+                                                                                
+       1900 6092 Boxwood St                                                     
+Whitehorse                     Yukon                                            
+Canada                                                                          
+                                                                                
+       2000 40-5-12 Laogianggen                                                 
+Beijing                                                                         
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+China                                                                           
+                                                                                
+       2100 1298 Vileparle (E)                                                  
+Bombay                         Maharashtra                                      
+India                                                                           
+                                                                                
+       2200 12-98 Victoria Street                                               
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+Sydney                         New South Wales                                  
+Australia                                                                       
+                                                                                
+       2300 198 Clementi North                                                  
+Singapore                                                                       
+Singapore                                                                       
+                                                                                
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+       2400 8204 Arthur St                                                      
+London                                                                          
+United Kingdom                                                                  
+                                                                                
+       2500 Magdalen Centre, The Oxford Science Park                            
+Oxford                         Oxford                                           
+United Kingdom                                                                  
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+                                                                                
+       2600 9702 Chester Road                                                   
+Stretford                      Manchester                                       
+United Kingdom                                                                  
+                                                                                
+       2700 Schwanthalerstr. 7031                                               
+Munich                         Bavaria                                          
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+Germany                                                                         
+                                                                                
+       2800 Rua Frei Caneca 1360                                                
+Sao Paulo                      Sao Paulo                                        
+Brazil                                                                          
+                                                                                
+       2900 20 Rue des Corps-Saints                                             
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+Geneva                         Geneve                                           
+Switzerland                                                                     
+                                                                                
+       3000 Murtenstrasse 921                                                   
+Bern                           BE                                               
+Switzerland                                                                     
+                                                                                
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+       3100 Pieter Breughelstraat 837                                           
+Utrecht                        Utrecht                                          
+Netherlands                                                                     
+                                                                                
+       3200 Mariano Escobedo 9991                                               
+Mexico City                    Distrito Federal,                                
+Mexico                                                                          
+
+LOCATION_ID STREET_ADDRESS                                                      
+----------- ----------------------------------------                            
+CITY                           STATE_PROVINCE                                   
+------------------------------ -------------------------                        
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+                                                                                
+
+23 rows selected.
+
+SQL> desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPLOYEE_ID                               NOT NULL NUMBER(6)
+ FIRST_NAME                                         VARCHAR2(20)
+ LAST_NAME                                 NOT NULL VARCHAR2(25)
+ EMAIL                                     NOT NULL VARCHAR2(25)
+ PHONE_NUMBER                                       VARCHAR2(20)
+ HIRE_DATE                                 NOT NULL DATE
+ JOB_ID                                    NOT NULL VARCHAR2(10)
+ SALARY                                             NUMBER(8,2)
+ COMMISSION_PCT                                     NUMBER(2,2)
+ MANAGER_ID                                         NUMBER(6)
+ DEPARTMENT_ID                                      NUMBER(4)
+
+SQL> desc department;
+ERROR:
+ORA-04043: object department does not exist 
+
+
+SQL> desc departments;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPARTMENT_ID                             NOT NULL NUMBER(4)
+ DEPARTMENT_NAME                           NOT NULL VARCHAR2(30)
+ MANAGER_ID                                         NUMBER(6)
+ LOCATION_ID                                        NUMBER(4)
+
+SQL> select e.last_name, e.department_id, d.department_name
+  2  from employees
+  3  left outer join departments ON e.departement_id = d.department_id;
+left outer join departments ON e.departement_id = d.department_id
+                                                  *
+ERROR at line 3:
+ORA-00904: "D"."DEPARTMENT_ID": invalid identifier 
+
+
+SQL> select e.last_name, e.department_id, d.department_name
+  2  from employees e
+  3  left outer join departments d ON e.departement_id = d.department_id;
+left outer join departments d ON e.departement_id = d.department_id
+                                 *
+ERROR at line 3:
+ORA-00904: "E"."DEPARTEMENT_ID": invalid identifier 
+
+
+SQL> select e.last_name, e.department_id, d.department_name
+  2  from employees e
+  3  left outer join departments d ON e.department_id = d.department_id;
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Whalen                               10 Administration                          
+Fay                                  20 Marketing                               
+Hartstein                            20 Marketing                               
+Colmenares                           30 Purchasing                              
+Himuro                               30 Purchasing                              
+Tobias                               30 Purchasing                              
+Baida                                30 Purchasing                              
+Khoo                                 30 Purchasing                              
+Raphaely                             30 Purchasing                              
+Mavris                               40 Human Resources                         
+Grant                                50 Shipping                                
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+OConnell                             50 Shipping                                
+Feeney                               50 Shipping                                
+Walsh                                50 Shipping                                
+Jones                                50 Shipping                                
+McCain                               50 Shipping                                
+Everett                              50 Shipping                                
+Bell                                 50 Shipping                                
+Perkins                              50 Shipping                                
+Gates                                50 Shipping                                
+Dilly                                50 Shipping                                
+Chung                                50 Shipping                                
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Cabrio                               50 Shipping                                
+Dellinger                            50 Shipping                                
+Bull                                 50 Shipping                                
+Sarchand                             50 Shipping                                
+Geoni                                50 Shipping                                
+Sullivan                             50 Shipping                                
+Fleaur                               50 Shipping                                
+Taylor                               50 Shipping                                
+Vargas                               50 Shipping                                
+Matos                                50 Shipping                                
+Davies                               50 Shipping                                
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Rajs                                 50 Shipping                                
+Patel                                50 Shipping                                
+Seo                                  50 Shipping                                
+Stiles                               50 Shipping                                
+Ladwig                               50 Shipping                                
+Philtanker                           50 Shipping                                
+Gee                                  50 Shipping                                
+Rogers                               50 Shipping                                
+Mallin                               50 Shipping                                
+Olson                                50 Shipping                                
+Marlow                               50 Shipping                                
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Atkinson                             50 Shipping                                
+Bissot                               50 Shipping                                
+Markle                               50 Shipping                                
+Landry                               50 Shipping                                
+Mikkilineni                          50 Shipping                                
+Nayer                                50 Shipping                                
+Mourgos                              50 Shipping                                
+Vollman                              50 Shipping                                
+Kaufling                             50 Shipping                                
+Fripp                                50 Shipping                                
+Weiss                                50 Shipping                                
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Lorentz                              60 IT                                      
+Pataballa                            60 IT                                      
+Austin                               60 IT                                      
+Ernst                                60 IT                                      
+Hunold                               60 IT                                      
+Baer                                 70 Public Relations                        
+Johnson                              80 Sales                                   
+Livingston                           80 Sales                                   
+Taylor                               80 Sales                                   
+Hutton                               80 Sales                                   
+Abel                                 80 Sales                                   
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Kumar                                80 Sales                                   
+Bates                                80 Sales                                   
+Smith                                80 Sales                                   
+Fox                                  80 Sales                                   
+Bloom                                80 Sales                                   
+Ozer                                 80 Sales                                   
+Banda                                80 Sales                                   
+Ande                                 80 Sales                                   
+Lee                                  80 Sales                                   
+Marvins                              80 Sales                                   
+Greene                               80 Sales                                   
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Vishney                              80 Sales                                   
+Sewall                               80 Sales                                   
+Doran                                80 Sales                                   
+Smith                                80 Sales                                   
+McEwen                               80 Sales                                   
+Sully                                80 Sales                                   
+King                                 80 Sales                                   
+Tuvault                              80 Sales                                   
+Cambrault                            80 Sales                                   
+Olsen                                80 Sales                                   
+Hall                                 80 Sales                                   
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Bernstein                            80 Sales                                   
+Tucker                               80 Sales                                   
+Zlotkey                              80 Sales                                   
+Cambrault                            80 Sales                                   
+Errazuriz                            80 Sales                                   
+Partners                             80 Sales                                   
+Russell                              80 Sales                                   
+De Haan                              90 Executive                               
+Kochhar                              90 Executive                               
+King                                 90 Executive                               
+Popp                                100 Finance                                 
+
+LAST_NAME                 DEPARTMENT_ID DEPARTMENT_NAME                         
+------------------------- ------------- ------------------------------          
+Urman                               100 Finance                                 
+Sciarra                             100 Finance                                 
+Chen                                100 Finance                                 
+Faviet                              100 Finance                                 
+Greenberg                           100 Finance                                 
+Gietz                               110 Accounting                              
+Higgins                             110 Accounting                              
+Grant                                                                           
+
+107 rows selected.
+
+SQL> select e.last_name, e.job_id, e.department_id, d.department_name
+  2  from employee e
+  3  left outer join departments d
+  4  on ;
+on 
+  *
+ERROR at line 4:
+ORA-00936: missing expression 
+
+
+SQL> select e.last_name, e.job_id, e.department_number, d.department_name
+  2  from employees e
+  3  left outer join departments d on e.department_id = d.department_id
+  4  join locations using(location_id)
+  5  where location_name = 'toronto';
+where location_name = 'toronto'
+      *
+ERROR at line 5:
+ORA-00904: "LOCATION_NAME": invalid identifier 
+
+
+SQL> select e.last_name, e.job_id, e.department_number, d.department_name
+  2  from employees e
+  3  left outer join departments d on e.department_id = d.department_id
+  4  join locations l on d.location_id = l.location_id
+  5  where l.state_province = 'TORONTO';
+select e.last_name, e.job_id, e.department_number, d.department_name
+                              *
+ERROR at line 1:
+ORA-00904: "E"."DEPARTMENT_NUMBER": invalid identifier 
+
+
+SQL> select e.last_name, e.job_id, e.department_id, d.department_name
+  2  from employees e
+  3  left outer join departments d on e.department_id = d.department_id
+  4  join locations l on d.location_id = l.location_id
+  5  where l.state_province = 'TORONTO';
+
+no rows selected
+
+SQL> select distinct country_name from countries
+  2  ;
+
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+Brazil                                                                          
+Denmark                                                                         
+Zambia                                                                          
+Zimbabwe                                                                        
+China                                                                           
+Malaysia                                                                        
+United Kingdom                                                                  
+United States of America                                                        
+Germany                                                                         
+France                                                                          
+India                                                                           
+
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+Nigeria                                                                         
+Australia                                                                       
+Egypt                                                                           
+Kuwait                                                                          
+Belgium                                                                         
+Canada                                                                          
+Israel                                                                          
+Argentina                                                                       
+Switzerland                                                                     
+Singapore                                                                       
+Italy                                                                           
+
+COUNTRY_NAME                                                                    
+----------------------------------------                                        
+Japan                                                                           
+Mexico                                                                          
+Netherlands                                                                     
+
+25 rows selected.
+
+SQL> select distinct state_province from countries;
+select distinct state_province from countries
+                *
+ERROR at line 1:
+ORA-00904: "STATE_PROVINCE": invalid identifier 
+
+
+SQL> select distinct state_province from locations;
+
+STATE_PROVINCE                                                                  
+-------------------------                                                       
+                                                                                
+Maharashtra                                                                     
+Distrito Federal,                                                               
+Texas                                                                           
+Bavaria                                                                         
+New South Wales                                                                 
+BE                                                                              
+Geneve                                                                          
+Tokyo Prefecture                                                                
+Sao Paulo                                                                       
+New Jersey                                                                      
+
+STATE_PROVINCE                                                                  
+-------------------------                                                       
+Washington                                                                      
+California                                                                      
+Manchester                                                                      
+Utrecht                                                                         
+Ontario                                                                         
+Yukon                                                                           
+Oxford                                                                          
+
+18 rows selected.
+
+SQL> desc locations;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ LOCATION_ID                               NOT NULL NUMBER(4)
+ STREET_ADDRESS                                     VARCHAR2(40)
+ POSTAL_CODE                                        VARCHAR2(12)
+ CITY                                      NOT NULL VARCHAR2(30)
+ STATE_PROVINCE                                     VARCHAR2(25)
+ COUNTRY_ID                                         CHAR(2)
+
+SQL> select distinct city from locations;
+
+CITY                                                                            
+------------------------------                                                  
+Beijing                                                                         
+Bern                                                                            
+Bombay                                                                          
+Geneva                                                                          
+Hiroshima                                                                       
+London                                                                          
+Mexico City                                                                     
+Munich                                                                          
+Oxford                                                                          
+Roma                                                                            
+Sao Paulo                                                                       
+
+CITY                                                                            
+------------------------------                                                  
+Seattle                                                                         
+Singapore                                                                       
+South Brunswick                                                                 
+South San Francisco                                                             
+Southlake                                                                       
+Stretford                                                                       
+Sydney                                                                          
+Tokyo                                                                           
+Toronto                                                                         
+Utrecht                                                                         
+Venice                                                                          
+
+CITY                                                                            
+------------------------------                                                  
+Whitehorse                                                                      
+
+23 rows selected.
+
+SQL> select e.last_name, e.job_id, e.department_id, d.department_name
+  2  from employees e
+  3  left outer join departments d on e.department_id = d.department_id
+  4  join locations l on d.location_id = l.location_id
+  5  where l.city = 'TORONTO';
+
+no rows selected
+
+SQL> where l.city = 'Toronto';
+SP2-0734: unknown command beginning "where l.ci..." - rest of line ignored.
+SQL> select e.last_name, e.job_id, e.department_id, d.department_name
+  2  from employees e
+  3  left outer join departments d on e.department_id = d.department_id
+  4  join locations l on d.location_id = l.location_id
+  5  where l.city = 'Toronto';
+
+LAST_NAME                 JOB_ID     DEPARTMENT_ID                              
+------------------------- ---------- -------------                              
+DEPARTMENT_NAME                                                                 
+------------------------------                                                  
+Hartstein                 MK_MAN                20                              
+Marketing                                                                       
+                                                                                
+Fay                       MK_REP                20                              
+Marketing                                                                       
+                                                                                
+
+SQL> 
+SQL> show table_name from user_tables;
+SP2-0158: unknown SHOW option "table_name"
+SP2-0158: unknown SHOW option "from"
+USER is "HR"
+SP2-0158: unknown SHOW option "_tables"
+SQL> select table_name from user_tables;
+
+TABLE_NAME                                                                      
+------------------------------                                                  
+COUNTRIES                                                                       
+JOB_HISTORY                                                                     
+EMPLOYEES                                                                       
+JOBS                                                                            
+DEPARTMENTS                                                                     
+LOCATIONS                                                                       
+REGIONS                                                                         
+
+7 rows selected.
+
+SQL> select * from employees
+  2  ;
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        100 Steven               King                                           
+SKING                     515.123.4567         17-JUN-03 AD_PRES         24000  
+                                     90                                         
+                                                                                
+        101 Neena                Kochhar                                        
+NKOCHHAR                  515.123.4568         21-SEP-05 AD_VP           17000  
+                      100            90                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        102 Lex                  De Haan                                        
+LDEHAAN                   515.123.4569         13-JAN-01 AD_VP           17000  
+                      100            90                                         
+                                                                                
+        103 Alexander            Hunold                                         
+AHUNOLD                   590.423.4567         03-JAN-06 IT_PROG          9000  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      102            60                                         
+                                                                                
+        104 Bruce                Ernst                                          
+BERNST                    590.423.4568         21-MAY-07 IT_PROG          6000  
+                      103            60                                         
+                                                                                
+        105 David                Austin                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+DAUSTIN                   590.423.4569         25-JUN-05 IT_PROG          4800  
+                      103            60                                         
+                                                                                
+        106 Valli                Pataballa                                      
+VPATABAL                  590.423.4560         05-FEB-06 IT_PROG          4800  
+                      103            60                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        107 Diana                Lorentz                                        
+DLORENTZ                  590.423.5567         07-FEB-07 IT_PROG          4200  
+                      103            60                                         
+                                                                                
+        108 Nancy                Greenberg                                      
+NGREENBE                  515.124.4569         17-AUG-02 FI_MGR          12008  
+                      101           100                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        109 Daniel               Faviet                                         
+DFAVIET                   515.124.4169         16-AUG-02 FI_ACCOUNT       9000  
+                      108           100                                         
+                                                                                
+        110 John                 Chen                                           
+JCHEN                     515.124.4269         28-SEP-05 FI_ACCOUNT       8200  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      108           100                                         
+                                                                                
+        111 Ismael               Sciarra                                        
+ISCIARRA                  515.124.4369         30-SEP-05 FI_ACCOUNT       7700  
+                      108           100                                         
+                                                                                
+        112 Jose Manuel          Urman                                          
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+JMURMAN                   515.124.4469         07-MAR-06 FI_ACCOUNT       7800  
+                      108           100                                         
+                                                                                
+        113 Luis                 Popp                                           
+LPOPP                     515.124.4567         07-DEC-07 FI_ACCOUNT       6900  
+                      108           100                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        114 Den                  Raphaely                                       
+DRAPHEAL                  515.127.4561         07-DEC-02 PU_MAN          11000  
+                      100            30                                         
+                                                                                
+        115 Alexander            Khoo                                           
+AKHOO                     515.127.4562         18-MAY-03 PU_CLERK         3100  
+                      114            30                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        116 Shelli               Baida                                          
+SBAIDA                    515.127.4563         24-DEC-05 PU_CLERK         2900  
+                      114            30                                         
+                                                                                
+        117 Sigal                Tobias                                         
+STOBIAS                   515.127.4564         24-JUL-05 PU_CLERK         2800  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      114            30                                         
+                                                                                
+        118 Guy                  Himuro                                         
+GHIMURO                   515.127.4565         15-NOV-06 PU_CLERK         2600  
+                      114            30                                         
+                                                                                
+        119 Karen                Colmenares                                     
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+KCOLMENA                  515.127.4566         10-AUG-07 PU_CLERK         2500  
+                      114            30                                         
+                                                                                
+        120 Matthew              Weiss                                          
+MWEISS                    650.123.1234         18-JUL-04 ST_MAN           8000  
+                      100            50                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        121 Adam                 Fripp                                          
+AFRIPP                    650.123.2234         10-APR-05 ST_MAN           8200  
+                      100            50                                         
+                                                                                
+        122 Payam                Kaufling                                       
+PKAUFLIN                  650.123.3234         01-MAY-03 ST_MAN           7900  
+                      100            50                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        123 Shanta               Vollman                                        
+SVOLLMAN                  650.123.4234         10-OCT-05 ST_MAN           6500  
+                      100            50                                         
+                                                                                
+        124 Kevin                Mourgos                                        
+KMOURGOS                  650.123.5234         16-NOV-07 ST_MAN           5800  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      100            50                                         
+                                                                                
+        125 Julia                Nayer                                          
+JNAYER                    650.124.1214         16-JUL-05 ST_CLERK         3200  
+                      120            50                                         
+                                                                                
+        126 Irene                Mikkilineni                                    
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+IMIKKILI                  650.124.1224         28-SEP-06 ST_CLERK         2700  
+                      120            50                                         
+                                                                                
+        127 James                Landry                                         
+JLANDRY                   650.124.1334         14-JAN-07 ST_CLERK         2400  
+                      120            50                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        128 Steven               Markle                                         
+SMARKLE                   650.124.1434         08-MAR-08 ST_CLERK         2200  
+                      120            50                                         
+                                                                                
+        129 Laura                Bissot                                         
+LBISSOT                   650.124.5234         20-AUG-05 ST_CLERK         3300  
+                      121            50                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        130 Mozhe                Atkinson                                       
+MATKINSO                  650.124.6234         30-OCT-05 ST_CLERK         2800  
+                      121            50                                         
+                                                                                
+        131 James                Marlow                                         
+JAMRLOW                   650.124.7234         16-FEB-05 ST_CLERK         2500  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      121            50                                         
+                                                                                
+        132 TJ                   Olson                                          
+TJOLSON                   650.124.8234         10-APR-07 ST_CLERK         2100  
+                      121            50                                         
+                                                                                
+        133 Jason                Mallin                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+JMALLIN                   650.127.1934         14-JUN-04 ST_CLERK         3300  
+                      122            50                                         
+                                                                                
+        134 Michael              Rogers                                         
+MROGERS                   650.127.1834         26-AUG-06 ST_CLERK         2900  
+                      122            50                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        135 Ki                   Gee                                            
+KGEE                      650.127.1734         12-DEC-07 ST_CLERK         2400  
+                      122            50                                         
+                                                                                
+        136 Hazel                Philtanker                                     
+HPHILTAN                  650.127.1634         06-FEB-08 ST_CLERK         2200  
+                      122            50                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        137 Renske               Ladwig                                         
+RLADWIG                   650.121.1234         14-JUL-03 ST_CLERK         3600  
+                      123            50                                         
+                                                                                
+        138 Stephen              Stiles                                         
+SSTILES                   650.121.2034         26-OCT-05 ST_CLERK         3200  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      123            50                                         
+                                                                                
+        139 John                 Seo                                            
+JSEO                      650.121.2019         12-FEB-06 ST_CLERK         2700  
+                      123            50                                         
+                                                                                
+        140 Joshua               Patel                                          
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+JPATEL                    650.121.1834         06-APR-06 ST_CLERK         2500  
+                      123            50                                         
+                                                                                
+        141 Trenna               Rajs                                           
+TRAJS                     650.121.8009         17-OCT-03 ST_CLERK         3500  
+                      124            50                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        142 Curtis               Davies                                         
+CDAVIES                   650.121.2994         29-JAN-05 ST_CLERK         3100  
+                      124            50                                         
+                                                                                
+        143 Randall              Matos                                          
+RMATOS                    650.121.2874         15-MAR-06 ST_CLERK         2600  
+                      124            50                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        144 Peter                Vargas                                         
+PVARGAS                   650.121.2004         09-JUL-06 ST_CLERK         2500  
+                      124            50                                         
+                                                                                
+        145 John                 Russell                                        
+JRUSSEL                   011.44.1344.429268   01-OCT-04 SA_MAN          14000  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+            .4        100            80                                         
+                                                                                
+        146 Karen                Partners                                       
+KPARTNER                  011.44.1344.467268   05-JAN-05 SA_MAN          13500  
+            .3        100            80                                         
+                                                                                
+        147 Alberto              Errazuriz                                      
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+AERRAZUR                  011.44.1344.429278   10-MAR-05 SA_MAN          12000  
+            .3        100            80                                         
+                                                                                
+        148 Gerald               Cambrault                                      
+GCAMBRAU                  011.44.1344.619268   15-OCT-07 SA_MAN          11000  
+            .3        100            80                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        149 Eleni                Zlotkey                                        
+EZLOTKEY                  011.44.1344.429018   29-JAN-08 SA_MAN          10500  
+            .2        100            80                                         
+                                                                                
+        150 Peter                Tucker                                         
+PTUCKER                   011.44.1344.129268   30-JAN-05 SA_REP          10000  
+            .3        145            80                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        151 David                Bernstein                                      
+DBERNSTE                  011.44.1344.345268   24-MAR-05 SA_REP           9500  
+           .25        145            80                                         
+                                                                                
+        152 Peter                Hall                                           
+PHALL                     011.44.1344.478968   20-AUG-05 SA_REP           9000  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+           .25        145            80                                         
+                                                                                
+        153 Christopher          Olsen                                          
+COLSEN                    011.44.1344.498718   30-MAR-06 SA_REP           8000  
+            .2        145            80                                         
+                                                                                
+        154 Nanette              Cambrault                                      
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+NCAMBRAU                  011.44.1344.987668   09-DEC-06 SA_REP           7500  
+            .2        145            80                                         
+                                                                                
+        155 Oliver               Tuvault                                        
+OTUVAULT                  011.44.1344.486508   23-NOV-07 SA_REP           7000  
+           .15        145            80                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        156 Janette              King                                           
+JKING                     011.44.1345.429268   30-JAN-04 SA_REP          10000  
+           .35        146            80                                         
+                                                                                
+        157 Patrick              Sully                                          
+PSULLY                    011.44.1345.929268   04-MAR-04 SA_REP           9500  
+           .35        146            80                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        158 Allan                McEwen                                         
+AMCEWEN                   011.44.1345.829268   01-AUG-04 SA_REP           9000  
+           .35        146            80                                         
+                                                                                
+        159 Lindsey              Smith                                          
+LSMITH                    011.44.1345.729268   10-MAR-05 SA_REP           8000  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+            .3        146            80                                         
+                                                                                
+        160 Louise               Doran                                          
+LDORAN                    011.44.1345.629268   15-DEC-05 SA_REP           7500  
+            .3        146            80                                         
+                                                                                
+        161 Sarath               Sewall                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+SSEWALL                   011.44.1345.529268   03-NOV-06 SA_REP           7000  
+           .25        146            80                                         
+                                                                                
+        162 Clara                Vishney                                        
+CVISHNEY                  011.44.1346.129268   11-NOV-05 SA_REP          10500  
+           .25        147            80                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        163 Danielle             Greene                                         
+DGREENE                   011.44.1346.229268   19-MAR-07 SA_REP           9500  
+           .15        147            80                                         
+                                                                                
+        164 Mattea               Marvins                                        
+MMARVINS                  011.44.1346.329268   24-JAN-08 SA_REP           7200  
+            .1        147            80                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        165 David                Lee                                            
+DLEE                      011.44.1346.529268   23-FEB-08 SA_REP           6800  
+            .1        147            80                                         
+                                                                                
+        166 Sundar               Ande                                           
+SANDE                     011.44.1346.629268   24-MAR-08 SA_REP           6400  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+            .1        147            80                                         
+                                                                                
+        167 Amit                 Banda                                          
+ABANDA                    011.44.1346.729268   21-APR-08 SA_REP           6200  
+            .1        147            80                                         
+                                                                                
+        168 Lisa                 Ozer                                           
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+LOZER                     011.44.1343.929268   11-MAR-05 SA_REP          11500  
+           .25        148            80                                         
+                                                                                
+        169 Harrison             Bloom                                          
+HBLOOM                    011.44.1343.829268   23-MAR-06 SA_REP          10000  
+            .2        148            80                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        170 Tayler               Fox                                            
+TFOX                      011.44.1343.729268   24-JAN-06 SA_REP           9600  
+            .2        148            80                                         
+                                                                                
+        171 William              Smith                                          
+WSMITH                    011.44.1343.629268   23-FEB-07 SA_REP           7400  
+           .15        148            80                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        172 Elizabeth            Bates                                          
+EBATES                    011.44.1343.529268   24-MAR-07 SA_REP           7300  
+           .15        148            80                                         
+                                                                                
+        173 Sundita              Kumar                                          
+SKUMAR                    011.44.1343.329268   21-APR-08 SA_REP           6100  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+            .1        148            80                                         
+                                                                                
+        174 Ellen                Abel                                           
+EABEL                     011.44.1644.429267   11-MAY-04 SA_REP          11000  
+            .3        149            80                                         
+                                                                                
+        175 Alyssa               Hutton                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+AHUTTON                   011.44.1644.429266   19-MAR-05 SA_REP           8800  
+           .25        149            80                                         
+                                                                                
+        176 Jonathon             Taylor                                         
+JTAYLOR                   011.44.1644.429265   24-MAR-06 SA_REP           8600  
+            .2        149            80                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        177 Jack                 Livingston                                     
+JLIVINGS                  011.44.1644.429264   23-APR-06 SA_REP           8400  
+            .2        149            80                                         
+                                                                                
+        178 Kimberely            Grant                                          
+KGRANT                    011.44.1644.429263   24-MAY-07 SA_REP           7000  
+           .15        149                                                       
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        179 Charles              Johnson                                        
+CJOHNSON                  011.44.1644.429262   04-JAN-08 SA_REP           6200  
+            .1        149            80                                         
+                                                                                
+        180 Winston              Taylor                                         
+WTAYLOR                   650.507.9876         24-JAN-06 SH_CLERK         3200  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      120            50                                         
+                                                                                
+        181 Jean                 Fleaur                                         
+JFLEAUR                   650.507.9877         23-FEB-06 SH_CLERK         3100  
+                      120            50                                         
+                                                                                
+        182 Martha               Sullivan                                       
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+MSULLIVA                  650.507.9878         21-JUN-07 SH_CLERK         2500  
+                      120            50                                         
+                                                                                
+        183 Girard               Geoni                                          
+GGEONI                    650.507.9879         03-FEB-08 SH_CLERK         2800  
+                      120            50                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        184 Nandita              Sarchand                                       
+NSARCHAN                  650.509.1876         27-JAN-04 SH_CLERK         4200  
+                      121            50                                         
+                                                                                
+        185 Alexis               Bull                                           
+ABULL                     650.509.2876         20-FEB-05 SH_CLERK         4100  
+                      121            50                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        186 Julia                Dellinger                                      
+JDELLING                  650.509.3876         24-JUN-06 SH_CLERK         3400  
+                      121            50                                         
+                                                                                
+        187 Anthony              Cabrio                                         
+ACABRIO                   650.509.4876         07-FEB-07 SH_CLERK         3000  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      121            50                                         
+                                                                                
+        188 Kelly                Chung                                          
+KCHUNG                    650.505.1876         14-JUN-05 SH_CLERK         3800  
+                      122            50                                         
+                                                                                
+        189 Jennifer             Dilly                                          
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+JDILLY                    650.505.2876         13-AUG-05 SH_CLERK         3600  
+                      122            50                                         
+                                                                                
+        190 Timothy              Gates                                          
+TGATES                    650.505.3876         11-JUL-06 SH_CLERK         2900  
+                      122            50                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        191 Randall              Perkins                                        
+RPERKINS                  650.505.4876         19-DEC-07 SH_CLERK         2500  
+                      122            50                                         
+                                                                                
+        192 Sarah                Bell                                           
+SBELL                     650.501.1876         04-FEB-04 SH_CLERK         4000  
+                      123            50                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        193 Britney              Everett                                        
+BEVERETT                  650.501.2876         03-MAR-05 SH_CLERK         3900  
+                      123            50                                         
+                                                                                
+        194 Samuel               McCain                                         
+SMCCAIN                   650.501.3876         01-JUL-06 SH_CLERK         3200  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      123            50                                         
+                                                                                
+        195 Vance                Jones                                          
+VJONES                    650.501.4876         17-MAR-07 SH_CLERK         2800  
+                      123            50                                         
+                                                                                
+        196 Alana                Walsh                                          
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+AWALSH                    650.507.9811         24-APR-06 SH_CLERK         3100  
+                      124            50                                         
+                                                                                
+        197 Kevin                Feeney                                         
+KFEENEY                   650.507.9822         23-MAY-06 SH_CLERK         3000  
+                      124            50                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        198 Donald               OConnell                                       
+DOCONNEL                  650.507.9833         21-JUN-07 SH_CLERK         2600  
+                      124            50                                         
+                                                                                
+        199 Douglas              Grant                                          
+DGRANT                    650.507.9844         13-JAN-08 SH_CLERK         2600  
+                      124            50                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+        200 Jennifer             Whalen                                         
+JWHALEN                   515.123.4444         17-SEP-03 AD_ASST          4400  
+                      101            10                                         
+                                                                                
+        201 Michael              Hartstein                                      
+MHARTSTE                  515.123.5555         17-FEB-04 MK_MAN          13000  
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                      100            20                                         
+                                                                                
+        202 Pat                  Fay                                            
+PFAY                      603.123.6666         17-AUG-05 MK_REP           6000  
+                      201            20                                         
+                                                                                
+        203 Susan                Mavris                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+SMAVRIS                   515.123.7777         07-JUN-02 HR_REP           6500  
+                      101            40                                         
+                                                                                
+        204 Hermann              Baer                                           
+HBAER                     515.123.8888         07-JUN-02 PR_REP          10000  
+                      101            70                                         
+                                                                                
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+        205 Shelley              Higgins                                        
+SHIGGINS                  515.123.8080         07-JUN-02 AC_MGR          12008  
+                      101           110                                         
+                                                                                
+        206 William              Gietz                                          
+WGIETZ                    515.123.8181         07-JUN-02 AC_ACCOUNT       8300  
+                      205           110                                         
+
+EMPLOYEE_ID FIRST_NAME           LAST_NAME                                      
+----------- -------------------- -------------------------                      
+EMAIL                     PHONE_NUMBER         HIRE_DATE JOB_ID         SALARY  
+------------------------- -------------------- --------- ---------- ----------  
+COMMISSION_PCT MANAGER_ID DEPARTMENT_ID                                         
+-------------- ---------- -------------                                         
+                                                                                
+
+107 rows selected.
+
+SQL> select e.last_name employee, e.employee_id "emp#", m.last_name manager, m.manager_id "mgr#"
+  2  from employees e
+  3  left outer join employees m on e.employee_id = m.employee_id;
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+King                             100 King                                       
+Kochhar                          101 Kochhar                          100       
+De Haan                          102 De Haan                          100       
+Hunold                           103 Hunold                           102       
+Ernst                            104 Ernst                            103       
+Austin                           105 Austin                           103       
+Pataballa                        106 Pataballa                        103       
+Lorentz                          107 Lorentz                          103       
+Greenberg                        108 Greenberg                        101       
+Faviet                           109 Faviet                           108       
+Chen                             110 Chen                             108       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Sciarra                          111 Sciarra                          108       
+Urman                            112 Urman                            108       
+Popp                             113 Popp                             108       
+Raphaely                         114 Raphaely                         100       
+Khoo                             115 Khoo                             114       
+Baida                            116 Baida                            114       
+Tobias                           117 Tobias                           114       
+Himuro                           118 Himuro                           114       
+Colmenares                       119 Colmenares                       114       
+Weiss                            120 Weiss                            100       
+Fripp                            121 Fripp                            100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Kaufling                         122 Kaufling                         100       
+Vollman                          123 Vollman                          100       
+Mourgos                          124 Mourgos                          100       
+Nayer                            125 Nayer                            120       
+Mikkilineni                      126 Mikkilineni                      120       
+Landry                           127 Landry                           120       
+Markle                           128 Markle                           120       
+Bissot                           129 Bissot                           121       
+Atkinson                         130 Atkinson                         121       
+Marlow                           131 Marlow                           121       
+Olson                            132 Olson                            121       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Mallin                           133 Mallin                           122       
+Rogers                           134 Rogers                           122       
+Gee                              135 Gee                              122       
+Philtanker                       136 Philtanker                       122       
+Ladwig                           137 Ladwig                           123       
+Stiles                           138 Stiles                           123       
+Seo                              139 Seo                              123       
+Patel                            140 Patel                            123       
+Rajs                             141 Rajs                             124       
+Davies                           142 Davies                           124       
+Matos                            143 Matos                            124       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Vargas                           144 Vargas                           124       
+Russell                          145 Russell                          100       
+Partners                         146 Partners                         100       
+Errazuriz                        147 Errazuriz                        100       
+Cambrault                        148 Cambrault                        100       
+Zlotkey                          149 Zlotkey                          100       
+Tucker                           150 Tucker                           145       
+Bernstein                        151 Bernstein                        145       
+Hall                             152 Hall                             145       
+Olsen                            153 Olsen                            145       
+Cambrault                        154 Cambrault                        145       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Tuvault                          155 Tuvault                          145       
+King                             156 King                             146       
+Sully                            157 Sully                            146       
+McEwen                           158 McEwen                           146       
+Smith                            159 Smith                            146       
+Doran                            160 Doran                            146       
+Sewall                           161 Sewall                           146       
+Vishney                          162 Vishney                          147       
+Greene                           163 Greene                           147       
+Marvins                          164 Marvins                          147       
+Lee                              165 Lee                              147       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Ande                             166 Ande                             147       
+Banda                            167 Banda                            147       
+Ozer                             168 Ozer                             148       
+Bloom                            169 Bloom                            148       
+Fox                              170 Fox                              148       
+Smith                            171 Smith                            148       
+Bates                            172 Bates                            148       
+Kumar                            173 Kumar                            148       
+Abel                             174 Abel                             149       
+Hutton                           175 Hutton                           149       
+Taylor                           176 Taylor                           149       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Livingston                       177 Livingston                       149       
+Grant                            178 Grant                            149       
+Johnson                          179 Johnson                          149       
+Taylor                           180 Taylor                           120       
+Fleaur                           181 Fleaur                           120       
+Sullivan                         182 Sullivan                         120       
+Geoni                            183 Geoni                            120       
+Sarchand                         184 Sarchand                         121       
+Bull                             185 Bull                             121       
+Dellinger                        186 Dellinger                        121       
+Cabrio                           187 Cabrio                           121       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Chung                            188 Chung                            122       
+Dilly                            189 Dilly                            122       
+Gates                            190 Gates                            122       
+Perkins                          191 Perkins                          122       
+Bell                             192 Bell                             123       
+Everett                          193 Everett                          123       
+McCain                           194 McCain                           123       
+Jones                            195 Jones                            123       
+Walsh                            196 Walsh                            124       
+Feeney                           197 Feeney                           124       
+OConnell                         198 OConnell                         124       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Grant                            199 Grant                            124       
+Whalen                           200 Whalen                           101       
+Hartstein                        201 Hartstein                        100       
+Fay                              202 Fay                              201       
+Mavris                           203 Mavris                           101       
+Baer                             204 Baer                             101       
+Higgins                          205 Higgins                          101       
+Gietz                            206 Gietz                            205       
+
+107 rows selected.
+
+SQL> select e.last_name employee, e.employee_id "emp#", m.last_name manager, m.manager_id "mgr#"
+  2  from employees e
+  3  join employees m on e.employee_id = m.employee_id;
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+King                             100 King                                       
+Kochhar                          101 Kochhar                          100       
+De Haan                          102 De Haan                          100       
+Hunold                           103 Hunold                           102       
+Ernst                            104 Ernst                            103       
+Austin                           105 Austin                           103       
+Pataballa                        106 Pataballa                        103       
+Lorentz                          107 Lorentz                          103       
+Greenberg                        108 Greenberg                        101       
+Faviet                           109 Faviet                           108       
+Chen                             110 Chen                             108       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Sciarra                          111 Sciarra                          108       
+Urman                            112 Urman                            108       
+Popp                             113 Popp                             108       
+Raphaely                         114 Raphaely                         100       
+Khoo                             115 Khoo                             114       
+Baida                            116 Baida                            114       
+Tobias                           117 Tobias                           114       
+Himuro                           118 Himuro                           114       
+Colmenares                       119 Colmenares                       114       
+Weiss                            120 Weiss                            100       
+Fripp                            121 Fripp                            100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Kaufling                         122 Kaufling                         100       
+Vollman                          123 Vollman                          100       
+Mourgos                          124 Mourgos                          100       
+Nayer                            125 Nayer                            120       
+Mikkilineni                      126 Mikkilineni                      120       
+Landry                           127 Landry                           120       
+Markle                           128 Markle                           120       
+Bissot                           129 Bissot                           121       
+Atkinson                         130 Atkinson                         121       
+Marlow                           131 Marlow                           121       
+Olson                            132 Olson                            121       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Mallin                           133 Mallin                           122       
+Rogers                           134 Rogers                           122       
+Gee                              135 Gee                              122       
+Philtanker                       136 Philtanker                       122       
+Ladwig                           137 Ladwig                           123       
+Stiles                           138 Stiles                           123       
+Seo                              139 Seo                              123       
+Patel                            140 Patel                            123       
+Rajs                             141 Rajs                             124       
+Davies                           142 Davies                           124       
+Matos                            143 Matos                            124       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Vargas                           144 Vargas                           124       
+Russell                          145 Russell                          100       
+Partners                         146 Partners                         100       
+Errazuriz                        147 Errazuriz                        100       
+Cambrault                        148 Cambrault                        100       
+Zlotkey                          149 Zlotkey                          100       
+Tucker                           150 Tucker                           145       
+Bernstein                        151 Bernstein                        145       
+Hall                             152 Hall                             145       
+Olsen                            153 Olsen                            145       
+Cambrault                        154 Cambrault                        145       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Tuvault                          155 Tuvault                          145       
+King                             156 King                             146       
+Sully                            157 Sully                            146       
+McEwen                           158 McEwen                           146       
+Smith                            159 Smith                            146       
+Doran                            160 Doran                            146       
+Sewall                           161 Sewall                           146       
+Vishney                          162 Vishney                          147       
+Greene                           163 Greene                           147       
+Marvins                          164 Marvins                          147       
+Lee                              165 Lee                              147       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Ande                             166 Ande                             147       
+Banda                            167 Banda                            147       
+Ozer                             168 Ozer                             148       
+Bloom                            169 Bloom                            148       
+Fox                              170 Fox                              148       
+Smith                            171 Smith                            148       
+Bates                            172 Bates                            148       
+Kumar                            173 Kumar                            148       
+Abel                             174 Abel                             149       
+Hutton                           175 Hutton                           149       
+Taylor                           176 Taylor                           149       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Livingston                       177 Livingston                       149       
+Grant                            178 Grant                            149       
+Johnson                          179 Johnson                          149       
+Taylor                           180 Taylor                           120       
+Fleaur                           181 Fleaur                           120       
+Sullivan                         182 Sullivan                         120       
+Geoni                            183 Geoni                            120       
+Sarchand                         184 Sarchand                         121       
+Bull                             185 Bull                             121       
+Dellinger                        186 Dellinger                        121       
+Cabrio                           187 Cabrio                           121       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Chung                            188 Chung                            122       
+Dilly                            189 Dilly                            122       
+Gates                            190 Gates                            122       
+Perkins                          191 Perkins                          122       
+Bell                             192 Bell                             123       
+Everett                          193 Everett                          123       
+McCain                           194 McCain                           123       
+Jones                            195 Jones                            123       
+Walsh                            196 Walsh                            124       
+Feeney                           197 Feeney                           124       
+OConnell                         198 OConnell                         124       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Grant                            199 Grant                            124       
+Whalen                           200 Whalen                           101       
+Hartstein                        201 Hartstein                        100       
+Fay                              202 Fay                              201       
+Mavris                           203 Mavris                           101       
+Baer                             204 Baer                             101       
+Higgins                          205 Higgins                          101       
+Gietz                            206 Gietz                            205       
+
+107 rows selected.
+
+SQL> select e.last_name employee, e.employee_id "emp#", m.last_name manager, m.manager_id "mgr#"
+  2  from employees e
+  3  join employees m on e.manager_id = m.employee_id;
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Hartstein                        201 King                                       
+Zlotkey                          149 King                                       
+Cambrault                        148 King                                       
+Errazuriz                        147 King                                       
+Partners                         146 King                                       
+Russell                          145 King                                       
+Mourgos                          124 King                                       
+Vollman                          123 King                                       
+Kaufling                         122 King                                       
+Fripp                            121 King                                       
+Weiss                            120 King                                       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Raphaely                         114 King                                       
+De Haan                          102 King                                       
+Kochhar                          101 King                                       
+Higgins                          205 Kochhar                          100       
+Baer                             204 Kochhar                          100       
+Mavris                           203 Kochhar                          100       
+Whalen                           200 Kochhar                          100       
+Greenberg                        108 Kochhar                          100       
+Hunold                           103 De Haan                          100       
+Lorentz                          107 Hunold                           102       
+Pataballa                        106 Hunold                           102       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Austin                           105 Hunold                           102       
+Ernst                            104 Hunold                           102       
+Popp                             113 Greenberg                        101       
+Urman                            112 Greenberg                        101       
+Sciarra                          111 Greenberg                        101       
+Chen                             110 Greenberg                        101       
+Faviet                           109 Greenberg                        101       
+Colmenares                       119 Raphaely                         100       
+Himuro                           118 Raphaely                         100       
+Tobias                           117 Raphaely                         100       
+Baida                            116 Raphaely                         100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Khoo                             115 Raphaely                         100       
+Geoni                            183 Weiss                            100       
+Sullivan                         182 Weiss                            100       
+Fleaur                           181 Weiss                            100       
+Taylor                           180 Weiss                            100       
+Markle                           128 Weiss                            100       
+Landry                           127 Weiss                            100       
+Mikkilineni                      126 Weiss                            100       
+Nayer                            125 Weiss                            100       
+Cabrio                           187 Fripp                            100       
+Dellinger                        186 Fripp                            100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Bull                             185 Fripp                            100       
+Sarchand                         184 Fripp                            100       
+Olson                            132 Fripp                            100       
+Marlow                           131 Fripp                            100       
+Atkinson                         130 Fripp                            100       
+Bissot                           129 Fripp                            100       
+Perkins                          191 Kaufling                         100       
+Gates                            190 Kaufling                         100       
+Dilly                            189 Kaufling                         100       
+Chung                            188 Kaufling                         100       
+Philtanker                       136 Kaufling                         100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Gee                              135 Kaufling                         100       
+Rogers                           134 Kaufling                         100       
+Mallin                           133 Kaufling                         100       
+Jones                            195 Vollman                          100       
+McCain                           194 Vollman                          100       
+Everett                          193 Vollman                          100       
+Bell                             192 Vollman                          100       
+Patel                            140 Vollman                          100       
+Seo                              139 Vollman                          100       
+Stiles                           138 Vollman                          100       
+Ladwig                           137 Vollman                          100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Grant                            199 Mourgos                          100       
+OConnell                         198 Mourgos                          100       
+Feeney                           197 Mourgos                          100       
+Walsh                            196 Mourgos                          100       
+Vargas                           144 Mourgos                          100       
+Matos                            143 Mourgos                          100       
+Davies                           142 Mourgos                          100       
+Rajs                             141 Mourgos                          100       
+Tuvault                          155 Russell                          100       
+Cambrault                        154 Russell                          100       
+Olsen                            153 Russell                          100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Hall                             152 Russell                          100       
+Bernstein                        151 Russell                          100       
+Tucker                           150 Russell                          100       
+Sewall                           161 Partners                         100       
+Doran                            160 Partners                         100       
+Smith                            159 Partners                         100       
+McEwen                           158 Partners                         100       
+Sully                            157 Partners                         100       
+King                             156 Partners                         100       
+Banda                            167 Errazuriz                        100       
+Ande                             166 Errazuriz                        100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Lee                              165 Errazuriz                        100       
+Marvins                          164 Errazuriz                        100       
+Greene                           163 Errazuriz                        100       
+Vishney                          162 Errazuriz                        100       
+Kumar                            173 Cambrault                        100       
+Bates                            172 Cambrault                        100       
+Smith                            171 Cambrault                        100       
+Fox                              170 Cambrault                        100       
+Bloom                            169 Cambrault                        100       
+Ozer                             168 Cambrault                        100       
+Johnson                          179 Zlotkey                          100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Grant                            178 Zlotkey                          100       
+Livingston                       177 Zlotkey                          100       
+Taylor                           176 Zlotkey                          100       
+Hutton                           175 Zlotkey                          100       
+Abel                             174 Zlotkey                          100       
+Fay                              202 Hartstein                        100       
+Gietz                            206 Higgins                          101       
+
+106 rows selected.
+
+SQL> save E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\prac6_1.sql
+Created file E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\prac6_1.sql
+SQL> select e.last_name employee, e.employee_id "emp#", m.last_name manager, m.manager_id "mgr#"
+  2  from employees e
+  3  left outer join employees m on e.manager_id = m.employee_id;
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Hartstein                        201 King                                       
+Zlotkey                          149 King                                       
+Cambrault                        148 King                                       
+Errazuriz                        147 King                                       
+Partners                         146 King                                       
+Russell                          145 King                                       
+Mourgos                          124 King                                       
+Vollman                          123 King                                       
+Kaufling                         122 King                                       
+Fripp                            121 King                                       
+Weiss                            120 King                                       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Raphaely                         114 King                                       
+De Haan                          102 King                                       
+Kochhar                          101 King                                       
+Higgins                          205 Kochhar                          100       
+Baer                             204 Kochhar                          100       
+Mavris                           203 Kochhar                          100       
+Whalen                           200 Kochhar                          100       
+Greenberg                        108 Kochhar                          100       
+Hunold                           103 De Haan                          100       
+Lorentz                          107 Hunold                           102       
+Pataballa                        106 Hunold                           102       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Austin                           105 Hunold                           102       
+Ernst                            104 Hunold                           102       
+Popp                             113 Greenberg                        101       
+Urman                            112 Greenberg                        101       
+Sciarra                          111 Greenberg                        101       
+Chen                             110 Greenberg                        101       
+Faviet                           109 Greenberg                        101       
+Colmenares                       119 Raphaely                         100       
+Himuro                           118 Raphaely                         100       
+Tobias                           117 Raphaely                         100       
+Baida                            116 Raphaely                         100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Khoo                             115 Raphaely                         100       
+Geoni                            183 Weiss                            100       
+Sullivan                         182 Weiss                            100       
+Fleaur                           181 Weiss                            100       
+Taylor                           180 Weiss                            100       
+Markle                           128 Weiss                            100       
+Landry                           127 Weiss                            100       
+Mikkilineni                      126 Weiss                            100       
+Nayer                            125 Weiss                            100       
+Cabrio                           187 Fripp                            100       
+Dellinger                        186 Fripp                            100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Bull                             185 Fripp                            100       
+Sarchand                         184 Fripp                            100       
+Olson                            132 Fripp                            100       
+Marlow                           131 Fripp                            100       
+Atkinson                         130 Fripp                            100       
+Bissot                           129 Fripp                            100       
+Perkins                          191 Kaufling                         100       
+Gates                            190 Kaufling                         100       
+Dilly                            189 Kaufling                         100       
+Chung                            188 Kaufling                         100       
+Philtanker                       136 Kaufling                         100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Gee                              135 Kaufling                         100       
+Rogers                           134 Kaufling                         100       
+Mallin                           133 Kaufling                         100       
+Jones                            195 Vollman                          100       
+McCain                           194 Vollman                          100       
+Everett                          193 Vollman                          100       
+Bell                             192 Vollman                          100       
+Patel                            140 Vollman                          100       
+Seo                              139 Vollman                          100       
+Stiles                           138 Vollman                          100       
+Ladwig                           137 Vollman                          100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Grant                            199 Mourgos                          100       
+OConnell                         198 Mourgos                          100       
+Feeney                           197 Mourgos                          100       
+Walsh                            196 Mourgos                          100       
+Vargas                           144 Mourgos                          100       
+Matos                            143 Mourgos                          100       
+Davies                           142 Mourgos                          100       
+Rajs                             141 Mourgos                          100       
+Tuvault                          155 Russell                          100       
+Cambrault                        154 Russell                          100       
+Olsen                            153 Russell                          100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Hall                             152 Russell                          100       
+Bernstein                        151 Russell                          100       
+Tucker                           150 Russell                          100       
+Sewall                           161 Partners                         100       
+Doran                            160 Partners                         100       
+Smith                            159 Partners                         100       
+McEwen                           158 Partners                         100       
+Sully                            157 Partners                         100       
+King                             156 Partners                         100       
+Banda                            167 Errazuriz                        100       
+Ande                             166 Errazuriz                        100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Lee                              165 Errazuriz                        100       
+Marvins                          164 Errazuriz                        100       
+Greene                           163 Errazuriz                        100       
+Vishney                          162 Errazuriz                        100       
+Kumar                            173 Cambrault                        100       
+Bates                            172 Cambrault                        100       
+Smith                            171 Cambrault                        100       
+Fox                              170 Cambrault                        100       
+Bloom                            169 Cambrault                        100       
+Ozer                             168 Cambrault                        100       
+Johnson                          179 Zlotkey                          100       
+
+EMPLOYEE                        emp# MANAGER                         mgr#       
+------------------------- ---------- ------------------------- ----------       
+Grant                            178 Zlotkey                          100       
+Livingston                       177 Zlotkey                          100       
+Taylor                           176 Zlotkey                          100       
+Hutton                           175 Zlotkey                          100       
+Abel                             174 Zlotkey                          100       
+Fay                              202 Hartstein                        100       
+Gietz                            206 Higgins                          101       
+King                             100                                            
+
+107 rows selected.
+
+SQL> save E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\prac6_2.sql
+Created file E:\Srish_Lab\NextecAssignments\Day2_31Dec2019\prac6_2.sql
+SQL> select e.last_name, e.department_id, c.last_name
+  2  from employee e
+  3  ;
+from employee e
+     *
+ERROR at line 2:
+ORA-00942: table or view does not exist 
+
+
+SQL> select e.last_name, e.department_id, c.last_name
+  2  from employees e
+  3  self join employees c on e.department_id = c.department_id
+  4  where e.department_id <> e.department_id;
+self join employees c on e.department_id = c.department_id
+*
+ERROR at line 3:
+ORA-00933: SQL command not properly ended 
+
+
+SQL> spool off;
