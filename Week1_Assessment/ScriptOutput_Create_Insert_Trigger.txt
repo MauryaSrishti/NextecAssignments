@@ -1,0 +1,319 @@
+
+Table SAILORS created.
+
+
+Table BOATS created.
+
+
+Table RESERVES created.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+Table RESERVES dropped.
+
+
+Table RESERVES created.
+
+
+Error starting at line : 40 in command -
+INSERT INTO boats VALUES (22, 101, DATE(1/1/2004))
+Error at Command Line : 40 Column : 36
+Error report -
+SQL Error: ORA-00936: missing expression
+00936. 00000 -  "missing expression"
+*Cause:    
+*Action:
+
+Error starting at line : 40 in command -
+INSERT INTO boats VALUES (22, 101, DATE('1/1/2004'))
+Error at Command Line : 40 Column : 36
+Error report -
+SQL Error: ORA-00936: missing expression
+00936. 00000 -  "missing expression"
+*Cause:    
+*Action:
+
+1 row inserted.
+
+
+Error starting at line : 41 in command -
+INSERT INTO boats VALUES (22, 102, TO_DATE('1/1/2004', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 42 in command -
+INSERT INTO boats VALUES (22, 103, TO_DATE('1/2/2004', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+Error starting at line : 17 in command -
+DROP TABLE reserve
+Error report -
+ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+
+Table RESERVES dropped.
+
+
+Error starting at line : 19 in command -
+CREATE TABLE reserves(
+S_ID NUMBER(4) REFERENCES sailors (S_ID),
+B_ID NUMBER(4) REFERENCES boats (B_ID),
+Day1 DATE,
+PRIMARY KEY(S_ID, B_ID)
+Error report -
+ORA-00907: missing right parenthesis
+00907. 00000 -  "missing right parenthesis"
+*Cause:    
+*Action:
+
+Error starting at line : 24 in command -
+)
+Error report -
+Unknown Command
+
+
+Error starting at line : 19 in command -
+CREATE TABLE reserves(
+S_ID NUMBER(4) REFERENCES sailors (S_ID),
+B_ID NUMBER(4) REFERENCES boats (B_ID),
+Day1 DATE,
+CONSTRAINT PK_COM PRIMARY KEY(S_ID, B_ID)
+Error report -
+ORA-00907: missing right parenthesis
+00907. 00000 -  "missing right parenthesis"
+*Cause:    
+*Action:
+
+Error starting at line : 24 in command -
+)
+Error report -
+Unknown Command
+
+
+Table RESERVES created.
+
+
+Error starting at line : 43 in command -
+INSERT INTO boats VALUES (22, 103, TO_DATE('1/2/2004', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 44 in command -
+INSERT INTO boats VALUES (31, 103, TO_DATE('5/5/2005', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Table RESERVES truncated.
+
+
+Error starting at line : 43 in command -
+INSERT INTO boats VALUES (22, 101, TO_DATE('1/1/2004', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 44 in command -
+INSERT INTO boats VALUES (22, 102, TO_DATE('1/1/2004', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 45 in command -
+INSERT INTO boats VALUES (22, 103, TO_DATE('1/2/2004', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 46 in command -
+INSERT INTO boats VALUES (31, 103, TO_DATE('5/5/2005', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 47 in command -
+INSERT INTO boats VALUES (32, 104, TO_DATE('7/4/2005', 'dd/mm/yyyy'))
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 43 in command -
+INSERT INTO boats VALUES (22, 101, '1/1/2004')
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+Name Null?    Type      
+---- -------- --------- 
+S_ID NOT NULL NUMBER(4) 
+B_ID NOT NULL NUMBER(4) 
+DAY1          DATE      
+
+Table RESERVES dropped.
+
+
+Table RESERVES created.
+
+
+Error starting at line : 43 in command -
+INSERT INTO boats VALUES (22, 101, '1/1/2004')
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 44 in command -
+INSERT INTO boats VALUES (22, 102, '1/1/2004')
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 45 in command -
+INSERT INTO boats VALUES (22, 103, '1/2/2004')
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 46 in command -
+INSERT INTO boats VALUES (31, 103, '5/5/2005')
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 47 in command -
+INSERT INTO boats VALUES (32, 104, '7/4/2005')
+Error report -
+ORA-00001: unique constraint (HR.SYS_C0011127) violated
+
+
+Error starting at line : 43 in command -
+TRUNCATE TABLE boats
+Error report -
+ORA-02266: unique/primary keys in table referenced by enabled foreign keys
+02266. 00000 -  "unique/primary keys in table referenced by enabled foreign keys"
+*Cause:    An attempt was made to truncate a table with unique or
+           primary keys referenced by foreign keys enabled in another table.
+           Other operations not allowed are dropping/truncating a partition of a
+           partitioned table or an ALTER TABLE EXCHANGE PARTITION.
+*Action:   Before performing the above operations the table, disable the
+           foreign key constraints in other tables. You can see what
+           constraints are referencing a table by issuing the following
+           command:
+           SELECT * FROM USER_CONSTRAINTS WHERE TABLE_NAME = "tabnam";
+
+Table RESERVES dropped.
+
+
+Table BOATS truncated.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+Table RESERVES created.
+
+
+Error starting at line : 45 in command -
+INSERT INTO reserves VALUES (22, 101, '1/1/2004')
+Error report -
+ORA-01843: not a valid month
+
+
+Error starting at line : 46 in command -
+INSERT INTO reserves VALUES (22, 102, '1/1/2004')
+Error report -
+ORA-01843: not a valid month
+
+
+Error starting at line : 47 in command -
+INSERT INTO reserves VALUES (22, 103, '1/2/2004')
+Error report -
+ORA-01843: not a valid month
+
+
+Error starting at line : 48 in command -
+INSERT INTO reserves VALUES (31, 103, '5/5/2005')
+Error report -
+ORA-01843: not a valid month
+
+
+Error starting at line : 49 in command -
+INSERT INTO reserves VALUES (32, 104, '7/4/2005')
+Error report -
+ORA-01843: not a valid month
+
+
+Error starting at line : 45 in command -
+INSERT INTO reserves VALUES (22, 101, '01/01/2004')
+Error report -
+ORA-01843: not a valid month
+
+
+Table RESERVES dropped.
+
+
+Table RESERVES created.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+Trigger TRIG_RES compiled
+
